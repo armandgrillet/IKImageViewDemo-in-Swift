@@ -11,7 +11,7 @@
 		BB806550195C317E00EEE4BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80654F195C317E00EEE4BC /* AppDelegate.swift */; };
 		BB806552195C317F00EEE4BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB806551195C317F00EEE4BC /* Images.xcassets */; };
 		BB806555195C317F00EEE4BC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB806553195C317F00EEE4BC /* MainMenu.xib */; };
-		BB806561195C317F00EEE4BC /* IKImageViewDemo_2014Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB806560195C317F00EEE4BC /* IKImageViewDemo_2014Tests.swift */; };
+		BB806561195C317F00EEE4BC /* IKImageViewDemo in SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB806560195C317F00EEE4BC /* IKImageViewDemo in SwiftTests.swift */; };
 		BB806575195C37C500EEE4BC /* earring.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB80656B195C37C500EEE4BC /* earring.jpg */; };
 		BB806576195C37C500EEE4BC /* TB_annotate.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BB80656C195C37C500EEE4BC /* TB_annotate.tiff */; };
 		BB806577195C37C500EEE4BC /* TB_crop.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BB80656D195C37C500EEE4BC /* TB_crop.tiff */; };
@@ -46,7 +46,7 @@
 		BB806554195C317F00EEE4BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BB80655A195C317F00EEE4BC /* IKImageViewDemo in SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IKImageViewDemo in SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB80655F195C317F00EEE4BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB806560195C317F00EEE4BC /* IKImageViewDemo_2014Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKImageViewDemo_2014Tests.swift; sourceTree = "<group>"; };
+		BB806560195C317F00EEE4BC /* IKImageViewDemo in SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKImageViewDemo in SwiftTests.swift"; sourceTree = "<group>"; };
 		BB80656B195C37C500EEE4BC /* earring.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earring.jpg; sourceTree = "<group>"; };
 		BB80656C195C37C500EEE4BC /* TB_annotate.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TB_annotate.tiff; sourceTree = "<group>"; };
 		BB80656D195C37C500EEE4BC /* TB_crop.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TB_crop.tiff; sourceTree = "<group>"; };
@@ -87,8 +87,8 @@
 			children = (
 				BB806581195C3B0A00EEE4BC /* Quartz.framework */,
 				BB806582195C3B0A00EEE4BC /* QuartzCore.framework */,
-				BB80654A195C317E00EEE4BC /* IKImageViewDemo 2014 */,
-				BB80655D195C317F00EEE4BC /* IKImageViewDemo 2014Tests */,
+				BB80654A195C317E00EEE4BC /* IKImageViewDemo in Swift */,
+				BB80655D195C317F00EEE4BC /* IKImageViewDemo in SwiftTests */,
 				BB806549195C317E00EEE4BC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,7 +102,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BB80654A195C317E00EEE4BC /* IKImageViewDemo 2014 */ = {
+		BB80654A195C317E00EEE4BC /* IKImageViewDemo in Swift */ = {
 			isa = PBXGroup;
 			children = (
 				BB80654F195C317E00EEE4BC /* AppDelegate.swift */,
@@ -112,6 +112,7 @@
 				BB80656A195C37A900EEE4BC /* Ressources */,
 				BB80654B195C317E00EEE4BC /* Supporting Files */,
 			);
+			name = "IKImageViewDemo in Swift";
 			path = "IKImageViewDemo 2014";
 			sourceTree = "<group>";
 		};
@@ -124,12 +125,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BB80655D195C317F00EEE4BC /* IKImageViewDemo 2014Tests */ = {
+		BB80655D195C317F00EEE4BC /* IKImageViewDemo in SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				BB806560195C317F00EEE4BC /* IKImageViewDemo_2014Tests.swift */,
+				BB806560195C317F00EEE4BC /* IKImageViewDemo in SwiftTests.swift */,
 				BB80655E195C317F00EEE4BC /* Supporting Files */,
 			);
+			name = "IKImageViewDemo in SwiftTests";
 			path = "IKImageViewDemo 2014Tests";
 			sourceTree = "<group>";
 		};
@@ -277,7 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB806561195C317F00EEE4BC /* IKImageViewDemo_2014Tests.swift in Sources */,
+				BB806561195C317F00EEE4BC /* IKImageViewDemo in SwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

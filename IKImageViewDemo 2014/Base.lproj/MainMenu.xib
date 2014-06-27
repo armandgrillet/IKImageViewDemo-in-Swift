@@ -485,7 +485,7 @@
                             <segments>
                                 <segment image="TB_zoomOut" width="32"/>
                                 <segment image="TB_zoomIn" width="32" tag="1"/>
-                                <segment image="TB_zoomActual" width="32" selected="YES">
+                                <segment image="TB_zoomActual" width="32">
                                     <nil key="label"/>
                                 </segment>
                                 <segment image="TB_zoomToFit">
