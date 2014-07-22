@@ -11,15 +11,12 @@ import AppKit
 
 class Controller: NSObject, NSWindowDelegate {
     /* Constants and variables. */
-    @IBOutlet var window: NSWindow
-    @IBOutlet var imageView: IKImageView
+    @IBOutlet var window: NSWindow!
+    @IBOutlet var imageView: IKImageView!
     
-    let ZOOM_IN_FACTOR = 1.414214
-    let ZOOM_OUT_FACTOR = 0.7071068
-    
-    var imageProperties = NSDictionary()
-    var imageUTType = ""
-    var saveOptions = IKSaveOptions()
+    var imageProperties: NSDictionary = Dictionary<String, String>()
+    var imageUTType: String = ""
+    var saveOptions: IKSaveOptions = IKSaveOptions()
     
     /* Override functions. */
     override func awakeFromNib () {
@@ -53,11 +50,9 @@ class Controller: NSObject, NSWindowDelegate {
         
         switch zoom {
         case 0:
-            zoomFactor = imageView.zoomFactor
-            imageView.zoomFactor = zoomFactor * ZOOM_OUT_FACTOR
+            imageView.zoomOut(self)
         case 1:
-            zoomFactor = imageView.zoomFactor
-            imageView.zoomFactor = zoomFactor * ZOOM_IN_FACTOR
+            imageView.zoomIn(self)
         case 2:
             imageView.zoomImageToActualSize(self)
         case 3:
@@ -134,17 +129,14 @@ class Controller: NSObject, NSWindowDelegate {
     func openImageUrl (url: NSURL) {
         /* Use ImageIO to get the CGImage, image properties, and the image-UTType. */
         var isr = CGImageSourceCreateWithURL(url, nil).takeUnretainedValue()
+
+        var options = NSDictionary(object: kCFBooleanTrue, forKey: kCGImageSourceShouldCache)
+        var image = CGImageSourceCreateImageAtIndex(isr, 0, options).takeUnretainedValue()
         
-        if isr != nil {
-            var options = NSDictionary(object: kCFBooleanTrue, forKey: kCGImageSourceShouldCache)
-            var image = CGImageSourceCreateImageAtIndex(isr, 0, options).takeUnretainedValue()
-            if image != nil {
-                imageProperties = CGImageSourceCopyPropertiesAtIndex(isr, 0, imageProperties).takeUnretainedValue() as NSDictionary
-                CFRelease(isr)
-                imageView.setImage(image, imageProperties: imageProperties)
-                CGImageRelease(image)
-                window.setTitleWithRepresentedFilename(url.lastPathComponent)
-            }
+        if CGImageGetWidth(image) > 0 && CGImageGetHeight(image) > 0 {
+            imageProperties = CGImageSourceCopyPropertiesAtIndex(isr, 0.asUnsigned(), imageProperties).takeUnretainedValue()
+            imageView.setImage(image, imageProperties: imageProperties)
+            window.setTitleWithRepresentedFilename(url.lastPathComponent)
         }
     }
     
@@ -152,14 +144,11 @@ class Controller: NSObject, NSWindowDelegate {
         if returnCode == NSOKButton {
             var newUTType: NSString = saveOptions.imageUTType
             var image: CGImage = imageView.image().takeUnretainedValue()
-            if image != nil {
+            if CGImageGetWidth(image) > 0 && CGImageGetHeight(image) > 0 {
                 var url = sheet.URL as CFURLRef
                 var dest: CGImageDestination = CGImageDestinationCreateWithURL(url, newUTType, 1, nil).takeUnretainedValue()
-                if dest != nil {
-                    CGImageDestinationAddImage(dest, image, saveOptions.imageProperties)
-                    CGImageDestinationFinalize(dest)
-                    CFRelease(dest)
-                }
+                CGImageDestinationAddImage(dest, image, saveOptions.imageProperties.bridgeToObjectiveC())
+                CGImageDestinationFinalize(dest)
             } else {
                 println("*** saveImageToPath - no image")
             }

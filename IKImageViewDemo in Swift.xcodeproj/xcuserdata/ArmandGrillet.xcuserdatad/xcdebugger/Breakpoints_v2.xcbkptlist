@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IKImageViewDemo 2014/Controller.swift"
-            timestampString = "425578762.046037"
+            timestampString = "427731878.288585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "doZoom(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -41,7 +41,7 @@
                   symbolName = "IKImageViewDemo_in_Swift.Controller.__deallocating_deinit"
                   moduleName = "IKImageViewDemo in Swift"
                   urlString = "file:///Users/ArmandGrillet/GitHub/IKImageViewDemo%20in%20Swift/IKImageViewDemo%202014/Controller.swift"
-                  timestampString = "425578793.788093"
+                  timestampString = "427733519.39441"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -55,12 +55,72 @@
                   symbolName = "@objc IKImageViewDemo_in_Swift.Controller.__ivar_destroyer"
                   moduleName = "IKImageViewDemo in Swift"
                   urlString = "file:///Users/ArmandGrillet/GitHub/IKImageViewDemo%20in%20Swift/IKImageViewDemo%202014/Controller.swift"
-                  timestampString = "425578793.788352"
+                  timestampString = "427733519.394605"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
                   endingLineNumber = "12"
-                  offsetFromSymbolStart = "11">
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IKImageViewDemo 2014/Controller.swift"
+            timestampString = "427731132.322275"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "Controller"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IKImageViewDemo_in_Swift.Controller.imageProperties.getter : ObjectiveC.NSDictionary"
+                  moduleName = "IKImageViewDemo in Swift"
+                  urlString = "file:///Users/ArmandGrillet/GitHub/IKImageViewDemo%20in%20Swift/IKImageViewDemo%202014/Controller.swift"
+                  timestampString = "427733118.44886"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IKImageViewDemo_in_Swift.Controller.imageProperties.setter : ObjectiveC.NSDictionary"
+                  moduleName = "IKImageViewDemo in Swift"
+                  urlString = "file:///Users/ArmandGrillet/GitHub/IKImageViewDemo%20in%20Swift/IKImageViewDemo%202014/Controller.swift"
+                  timestampString = "427733118.449103"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IKImageViewDemo_in_Swift.Controller.init (IKImageViewDemo_in_Swift.Controller.Type)() -&gt; IKImageViewDemo_in_Swift.Controller"
+                  moduleName = "IKImageViewDemo in Swift"
+                  urlString = "file:///Users/ArmandGrillet/GitHub/IKImageViewDemo%20in%20Swift/IKImageViewDemo%202014/Controller.swift"
+                  timestampString = "427733118.449274"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "121">
                </Location>
             </Locations>
          </BreakpointContent>
