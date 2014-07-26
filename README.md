@@ -1,7 +1,7 @@
 IKImageViewDemo in Swift
 ========================
 
-![Project's image](https://s3-us-west-1.amazonaws.com/armand.gr/static/work/IKImageViewDemo+in+Swift/GitHub.png)
+![Project's image](http://i.imgur.com/P6edA7s.png)
 
 ##Why?
 
