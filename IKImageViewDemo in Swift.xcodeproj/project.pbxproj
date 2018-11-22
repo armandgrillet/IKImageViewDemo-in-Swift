@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB80654E195C317E00EEE4BC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80654D195C317E00EEE4BC /* main.swift */; };
 		BB806550195C317E00EEE4BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80654F195C317E00EEE4BC /* AppDelegate.swift */; };
 		BB806552195C317F00EEE4BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB806551195C317F00EEE4BC /* Images.xcassets */; };
 		BB806555195C317F00EEE4BC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB806553195C317F00EEE4BC /* MainMenu.xib */; };
@@ -40,7 +39,6 @@
 /* Begin PBXFileReference section */
 		BB806548195C317E00EEE4BC /* IKImageViewDemo in Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IKImageViewDemo in Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB80654C195C317E00EEE4BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB80654D195C317E00EEE4BC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BB80654F195C317E00EEE4BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB806551195C317F00EEE4BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BB806554195C317F00EEE4BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				BB80654C195C317E00EEE4BC /* Info.plist */,
-				BB80654D195C317E00EEE4BC /* main.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -271,7 +268,6 @@
 			files = (
 				BB806580195C3A8900EEE4BC /* Controller.swift in Sources */,
 				BB806550195C317E00EEE4BC /* AppDelegate.swift in Sources */,
-				BB80654E195C317E00EEE4BC /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +386,7 @@
 				INFOPLIST_FILE = "IKImageViewDemo 2014/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "IKImageViewDemo in Swift";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -401,6 +398,7 @@
 				INFOPLIST_FILE = "IKImageViewDemo 2014/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "IKImageViewDemo in Swift";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
