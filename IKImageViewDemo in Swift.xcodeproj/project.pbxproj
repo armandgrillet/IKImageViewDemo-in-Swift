@@ -10,7 +10,6 @@
 		BB806550195C317E00EEE4BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80654F195C317E00EEE4BC /* AppDelegate.swift */; };
 		BB806552195C317F00EEE4BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB806551195C317F00EEE4BC /* Images.xcassets */; };
 		BB806555195C317F00EEE4BC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB806553195C317F00EEE4BC /* MainMenu.xib */; };
-		BB806561195C317F00EEE4BC /* IKImageViewDemo in SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB806560195C317F00EEE4BC /* IKImageViewDemo in SwiftTests.swift */; };
 		BB806575195C37C500EEE4BC /* earring.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB80656B195C37C500EEE4BC /* earring.jpg */; };
 		BB806576195C37C500EEE4BC /* TB_annotate.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BB80656C195C37C500EEE4BC /* TB_annotate.tiff */; };
 		BB806577195C37C500EEE4BC /* TB_crop.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BB80656D195C37C500EEE4BC /* TB_crop.tiff */; };
@@ -26,23 +25,12 @@
 		BB806584195C3B0A00EEE4BC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB806582195C3B0A00EEE4BC /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		BB80655B195C317F00EEE4BC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB806540195C317E00EEE4BC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BB806547195C317E00EEE4BC;
-			remoteInfo = "IKImageViewDemo 2014";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		BB806548195C317E00EEE4BC /* IKImageViewDemo in Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IKImageViewDemo in Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB80654C195C317E00EEE4BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB80654F195C317E00EEE4BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB806551195C317F00EEE4BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BB806554195C317F00EEE4BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		BB80655A195C317F00EEE4BC /* IKImageViewDemo in SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IKImageViewDemo in SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB80655F195C317F00EEE4BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB806560195C317F00EEE4BC /* IKImageViewDemo in SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKImageViewDemo in SwiftTests.swift"; sourceTree = "<group>"; };
 		BB80656B195C37C500EEE4BC /* earring.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earring.jpg; sourceTree = "<group>"; };
@@ -70,13 +58,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB806557195C317F00EEE4BC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -95,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				BB806548195C317E00EEE4BC /* IKImageViewDemo in Swift.app */,
-				BB80655A195C317F00EEE4BC /* IKImageViewDemo in SwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,39 +157,18 @@
 			productReference = BB806548195C317E00EEE4BC /* IKImageViewDemo in Swift.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BB806559195C317F00EEE4BC /* IKImageViewDemo in SwiftTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BB806567195C317F00EEE4BC /* Build configuration list for PBXNativeTarget "IKImageViewDemo in SwiftTests" */;
-			buildPhases = (
-				BB806556195C317F00EEE4BC /* Sources */,
-				BB806557195C317F00EEE4BC /* Frameworks */,
-				BB806558195C317F00EEE4BC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BB80655C195C317F00EEE4BC /* PBXTargetDependency */,
-			);
-			name = "IKImageViewDemo in SwiftTests";
-			productName = "IKImageViewDemo 2014Tests";
-			productReference = BB80655A195C317F00EEE4BC /* IKImageViewDemo in SwiftTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BB806540195C317E00EEE4BC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "A+A";
 				TargetAttributes = {
 					BB806547195C317E00EEE4BC = {
 						CreatedOnToolsVersion = 6.0;
-					};
-					BB806559195C317F00EEE4BC = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = BB806547195C317E00EEE4BC;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -227,7 +186,6 @@
 			projectRoot = "";
 			targets = (
 				BB806547195C317E00EEE4BC /* IKImageViewDemo in Swift */,
-				BB806559195C317F00EEE4BC /* IKImageViewDemo in SwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -252,13 +210,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB806558195C317F00EEE4BC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -271,23 +222,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB806556195C317F00EEE4BC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BB806561195C317F00EEE4BC /* IKImageViewDemo in SwiftTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BB80655C195C317F00EEE4BC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BB806547195C317E00EEE4BC /* IKImageViewDemo in Swift */;
-			targetProxy = BB80655B195C317F00EEE4BC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BB806553195C317F00EEE4BC /* MainMenu.xib */ = {
@@ -309,20 +244,32 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -340,6 +287,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -351,13 +300,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -366,6 +325,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -375,6 +335,9 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -385,8 +348,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "IKImageViewDemo 2014/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AGrillet.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "IKImageViewDemo in Swift";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -397,46 +362,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "IKImageViewDemo 2014/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AGrillet.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "IKImageViewDemo in Swift";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		BB806568195C317F00EEE4BC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IKImageViewDemo 2014.app/Contents/MacOS/IKImageViewDemo 2014";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "IKImageViewDemo 2014Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "IKImageViewDemo in SwiftTests";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		BB806569195C317F00EEE4BC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IKImageViewDemo 2014.app/Contents/MacOS/IKImageViewDemo 2014";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "IKImageViewDemo 2014Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "IKImageViewDemo in SwiftTests";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -457,15 +386,6 @@
 			buildConfigurations = (
 				BB806565195C317F00EEE4BC /* Debug */,
 				BB806566195C317F00EEE4BC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BB806567195C317F00EEE4BC /* Build configuration list for PBXNativeTarget "IKImageViewDemo in SwiftTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BB806568195C317F00EEE4BC /* Debug */,
-				BB806569195C317F00EEE4BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -40,9 +40,8 @@ class Controller: NSObject, NSWindowDelegate {
     /* IBActions. */
     @IBAction func doZoom (_ sender: AnyObject) {
         var zoom = Int()
-        var zoomFactor = CGFloat()
         
-        if sender.isKind(of: NSSegmentedControl) {
+        if sender.isKind(of: NSSegmentedControl.self) {
             zoom = sender.selectedSegment
         } else {
             zoom = sender.tag
@@ -73,8 +72,8 @@ class Controller: NSObject, NSWindowDelegate {
         openPanel.allowedFileTypes = types
         openPanel.canSelectHiddenExtension = true
         openPanel.beginSheetModal(for: window, completionHandler: {
-                (result: NSInteger) -> Void in
-                if result == NSFileHandlingPanelOKButton { // User did select an image.
+                (result: NSApplication.ModalResponse) -> Void in
+            if result.rawValue == NSFileHandlingPanelOKButton { // User did select an image.
                     self.openImageUrl(openPanel.url!)
                 }
             }
@@ -85,15 +84,14 @@ class Controller: NSObject, NSWindowDelegate {
     @IBAction func saveImage (_ sender: AnyObject) {
         let savePanel = NSSavePanel()
         
-        saveOptions = IKSaveOptions(imageProperties: imageProperties as! [AnyHashable : Any], imageUTType: imageUTType)
+        saveOptions = IKSaveOptions(imageProperties: imageProperties as [AnyHashable : Any], imageUTType: imageUTType)
         saveOptions.addAccessoryView(to: savePanel)
         
-        var imageName = window.title
         savePanel.beginSheetModal(for: window,
             completionHandler: {
-                (result: NSInteger) -> Void in
-                if result == NSFileHandlingPanelOKButton {
-                    self.savePanelDidEnd(savePanel, returnCode: result)
+                (result: NSApplication.ModalResponse) -> Void in
+                if result.rawValue == NSFileHandlingPanelOKButton {
+                    self.savePanelDidEnd(savePanel, returnCode: result.rawValue)
                 }
             }
         )
@@ -102,7 +100,7 @@ class Controller: NSObject, NSWindowDelegate {
     @IBAction func switchToolMode (_ sender: AnyObject) {
         var newTool = Int()
         
-        if sender.isKind(of: NSSegmentedControl) {
+        if sender.isKind(of: NSSegmentedControl.self) {
             newTool = sender.selectedSegment
         } else {
             newTool = sender.tag
@@ -129,7 +127,7 @@ class Controller: NSObject, NSWindowDelegate {
         /* Use ImageIO to get the CGImage, image properties, and the image-UTType. */
         guard let isr = CGImageSourceCreateWithURL(url as CFURL, nil) else { return }
 
-        var options = NSDictionary(object: kCFBooleanTrue, forKey: kCGImageSourceShouldCache as! NSCopying)
+        let options = NSDictionary(object: kCFBooleanTrue, forKey: kCGImageSourceShouldCache as! NSCopying)
         if let image = CGImageSourceCreateImageAtIndex(isr, 0, options) {
             if image.width > 0 && image.height > 0 {
 //                imageProperties = CGImageSourceCopyPropertiesAtIndex(isr, 0, imageProperties)
@@ -141,10 +139,10 @@ class Controller: NSObject, NSWindowDelegate {
     
     func savePanelDidEnd (_ sheet: NSSavePanel, returnCode: NSInteger) {
         if returnCode == NSOKButton {
-            let newUTType: NSString = saveOptions.imageUTType as! NSString
+            let newUTType: NSString = saveOptions.imageUTType as NSString
             let image: CGImage = imageView.image().takeUnretainedValue()
             if image.width > 0 && image.height > 0 {
-                let url = sheet.url as! CFURL
+                let url = sheet.url! as CFURL
                 let dest: CGImageDestination = CGImageDestinationCreateWithURL(url, newUTType, 1, nil)!
                 CGImageDestinationAddImage(dest, image, saveOptions.imageProperties._bridgeToObjectiveC())
                 CGImageDestinationFinalize(dest)
