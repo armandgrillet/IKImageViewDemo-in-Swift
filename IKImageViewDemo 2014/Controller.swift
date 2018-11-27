@@ -14,15 +14,15 @@ class Controller: NSObject, NSWindowDelegate {
     @IBOutlet var window: NSWindow!
     @IBOutlet var imageView: IKImageView!
     
-    var imageProperties: NSDictionary = Dictionary<String, String>()
+    var imageProperties: Dictionary<String,String> = [:]
     var imageUTType: String = ""
     var saveOptions: IKSaveOptions = IKSaveOptions()
     
     /* Override functions. */
     override func awakeFromNib () {
         /* Open the sample files that's inside the application bundle. */
-        var path = NSBundle.mainBundle().pathForResource("earring", ofType: "jpg")
-        var url = NSURL.fileURLWithPath(path)
+        let path = Bundle.main.path(forResource: "earring", ofType: "jpg")
+        let url = URL.init(fileURLWithPath: path!)
         
         self.openImageUrl(url)
         
@@ -33,19 +33,18 @@ class Controller: NSObject, NSWindowDelegate {
     }
     
     /* Event listeners. */
-    func windowDidResize (notification: NSNotification?) {
+    func windowDidResize (_ notification: Notification) {
         imageView.zoomImageToFit(self)
     }
     
     /* IBActions. */
-    @IBAction func doZoom (sender: AnyObject) {
+    @IBAction func doZoom (_ sender: AnyObject) {
         var zoom = Int()
-        var zoomFactor = CGFloat()
         
-        if sender.isKindOfClass(NSSegmentedControl) {
+        if sender.isKind(of: NSSegmentedControl.self) {
             zoom = sender.selectedSegment
         } else {
-            zoom = sender.tag()
+            zoom = sender.tag
         }
         
         switch zoom {
@@ -63,50 +62,48 @@ class Controller: NSObject, NSWindowDelegate {
         
     }
     
-    @IBAction func openImage (sender: AnyObject) {
+    @IBAction func openImage (_ sender: AnyObject) {
         /* Present open panel. */
-        let extensions = "jpg/jpeg/JPG/JPEG/png/PNG/tiff/tif/TIFF/TIF"
-        let types = extensions.pathComponents
+        let extensions = URL.init(string: "jpg/jpeg/JPG/JPEG/png/PNG/tiff/tif/TIFF/TIF")
+        let types = extensions?.pathComponents
         
         /* Let the user choose an output file, then start the process of writing samples. */
-        var openPanel = NSOpenPanel()
+        let openPanel = NSOpenPanel()
         openPanel.allowedFileTypes = types
         openPanel.canSelectHiddenExtension = true
-        openPanel.beginSheetModalForWindow(window,
-            {
-                (result: NSInteger) -> Void in
-                if result == NSFileHandlingPanelOKButton { // User did select an image.
-                    self.openImageUrl(openPanel.URL)
+        openPanel.beginSheetModal(for: window, completionHandler: {
+                (result: NSApplication.ModalResponse) -> Void in
+            if result.rawValue == NSFileHandlingPanelOKButton { // User did select an image.
+                    self.openImageUrl(openPanel.url!)
                 }
             }
         )
 
     }
     
-    @IBAction func saveImage (sender: AnyObject) {
-        var savePanel = NSSavePanel()
+    @IBAction func saveImage (_ sender: AnyObject) {
+        let savePanel = NSSavePanel()
         
-        saveOptions = IKSaveOptions(imageProperties: imageProperties, imageUTType: imageUTType)
-        saveOptions.addSaveOptionsAccessoryViewToSavePanel(savePanel)
+        saveOptions = IKSaveOptions(imageProperties: imageProperties as [AnyHashable : Any], imageUTType: imageUTType)
+        saveOptions.addAccessoryView(to: savePanel)
         
-        var imageName = window.title
-        savePanel.beginSheetModalForWindow(window,
-            {
-                (result: NSInteger) -> Void in
-                if result == NSFileHandlingPanelOKButton {
-                    self.savePanelDidEnd(savePanel, returnCode: result)
+        savePanel.beginSheetModal(for: window,
+            completionHandler: {
+                (result: NSApplication.ModalResponse) -> Void in
+                if result.rawValue == NSFileHandlingPanelOKButton {
+                    self.savePanelDidEnd(savePanel, returnCode: result.rawValue)
                 }
             }
         )
     }
     
-    @IBAction func switchToolMode (sender: AnyObject) {
+    @IBAction func switchToolMode (_ sender: AnyObject) {
         var newTool = Int()
         
-        if sender.isKindOfClass(NSSegmentedControl) {
+        if sender.isKind(of: NSSegmentedControl.self) {
             newTool = sender.selectedSegment
         } else {
-            newTool = sender.tag()
+            newTool = sender.tag
         }
         
         switch (newTool) {
@@ -126,31 +123,31 @@ class Controller: NSObject, NSWindowDelegate {
     }
     
     /* Functions. */
-    func openImageUrl (url: NSURL) {
+    func openImageUrl (_ url: URL) {
         /* Use ImageIO to get the CGImage, image properties, and the image-UTType. */
-        var isr = CGImageSourceCreateWithURL(url, nil).takeUnretainedValue()
+        guard let isr = CGImageSourceCreateWithURL(url as CFURL, nil) else { return }
 
-        var options = NSDictionary(object: kCFBooleanTrue, forKey: kCGImageSourceShouldCache)
-        var image = CGImageSourceCreateImageAtIndex(isr, 0, options).takeUnretainedValue()
-        
-        if CGImageGetWidth(image) > 0 && CGImageGetHeight(image) > 0 {
-            imageProperties = CGImageSourceCopyPropertiesAtIndex(isr, 0.asUnsigned(), imageProperties).takeUnretainedValue()
-            imageView.setImage(image, imageProperties: imageProperties)
-            window.setTitleWithRepresentedFilename(url.lastPathComponent)
+        let options = NSDictionary(object: kCFBooleanTrue, forKey: kCGImageSourceShouldCache as! NSCopying)
+        if let image = CGImageSourceCreateImageAtIndex(isr, 0, options) {
+            if image.width > 0 && image.height > 0 {
+//                imageProperties = CGImageSourceCopyPropertiesAtIndex(isr, 0, imageProperties)
+                imageView.setImage(image, imageProperties: imageProperties)
+                window.setTitleWithRepresentedFilename(url.lastPathComponent)
+            }
         }
     }
     
-    func savePanelDidEnd (sheet: NSSavePanel, returnCode: NSInteger) {
+    func savePanelDidEnd (_ sheet: NSSavePanel, returnCode: NSInteger) {
         if returnCode == NSOKButton {
-            var newUTType: NSString = saveOptions.imageUTType
-            var image: CGImage = imageView.image().takeUnretainedValue()
-            if CGImageGetWidth(image) > 0 && CGImageGetHeight(image) > 0 {
-                var url = sheet.URL as CFURLRef
-                var dest: CGImageDestination = CGImageDestinationCreateWithURL(url, newUTType, 1, nil).takeUnretainedValue()
-                CGImageDestinationAddImage(dest, image, saveOptions.imageProperties.bridgeToObjectiveC())
+            let newUTType: NSString = saveOptions.imageUTType as NSString
+            let image: CGImage = imageView.image().takeUnretainedValue()
+            if image.width > 0 && image.height > 0 {
+                let url = sheet.url! as CFURL
+                let dest: CGImageDestination = CGImageDestinationCreateWithURL(url, newUTType, 1, nil)!
+                CGImageDestinationAddImage(dest, image, saveOptions.imageProperties._bridgeToObjectiveC())
                 CGImageDestinationFinalize(dest)
             } else {
-                println("*** saveImageToPath - no image")
+                print("*** saveImageToPath - no image")
             }
         }
     }
